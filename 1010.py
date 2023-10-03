@@ -26,11 +26,11 @@ def factorial(num):
     for i in range(1,num+1):
         temp = temp * i
 
-    return int(temp)
+    return temp
 
 def combination(n : int , r : int) -> int :
     if n-r == 0 : return 1
-    return factorial(n) / (factorial(r) * factorial(n-r))
+    return int(factorial(n) / (factorial(r) * factorial(n-r)))
 
 T = int(input())
 for _ in range(T):
