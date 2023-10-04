@@ -10,3 +10,38 @@
 # front: 큐의 가장 앞에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.
 # back: 큐의 가장 뒤에 있는 정수를 출력한다. 만약 큐에 들어있는 정수가 없는 경우에는 -1을 출력한다.
 
+import sys
+
+n = sys.stdin.readline()    
+
+arr=[]
+for _ in range(int(n)):
+    str = list(sys.stdin.readline().rstrip().split(' '))
+    command = str[0]
+    if len(str) > 1:
+        data = str[1]
+    if command == 'push':
+        arr.append(data)
+        print(data)
+    if command == 'pop':
+        if len(str) > 0:
+            print(arr.pop(0))
+        else:
+            print(-1)
+    if command == 'size':
+        print(len(arr))
+    if command == 'empty':
+        if len(arr) > 0:
+            print(0)
+        else:
+            print(1)
+    if command == 'front':
+        if len(arr) > 0:
+            print(arr[0])
+        else:
+            print(-1)
+    if command == 'back':
+        if len(arr) > 0:
+            print(arr[-1])
+        else:
+            print(-1)
