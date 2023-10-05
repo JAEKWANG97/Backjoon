@@ -22,9 +22,8 @@ for _ in range(int(n)):
         data = str[1]
     if command == 'push':
         arr.append(data)
-        print(data)
     if command == 'pop':
-        if len(str) > 0:
+        if len(arr) > 0:
             print(arr.pop(0))
         else:
             print(-1)
