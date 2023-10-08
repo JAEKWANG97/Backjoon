@@ -2,7 +2,7 @@
 
 import sys
 
-str = list(sys.stdin.realine().strip().split(' '))
+str = list(sys.stdin.readline().strip().split(' '))
 n = int(str[0])
 m = int(str[1])
 

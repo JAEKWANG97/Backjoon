@@ -7,20 +7,21 @@
 # ....
 # 소수 완성!
 
-n , m = (input().split(' '))
 
-print(n, m)
+
+import sys
+import math
+str = list(map(int, list(sys.stdin.readline().strip().split(' '))))
+n , m = str[0] , str[1]
 
 arr = [x for x in range(1,int(m)+1)]
 
-print(arr)
+# 불리언 배열을 이요해야함 인덱스를 활용해서
 
-decimal = []
+value = math.sqrt(m)
 
-for i in range(2, len(arr)):
-    decimal.appen(i)
-    for i in range(len(arr)):
-        # decimal 의 배수 인덱스를 다 제거 할거임
-    if i in arr:
-        print(i)
-    
+def search_decimal(m):
+    decimal = []
+    for i in range(m):
+        if decimal[i] < value:
+            if value % decimal != 0:
