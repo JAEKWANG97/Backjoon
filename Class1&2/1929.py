@@ -16,12 +16,28 @@ n , m = str[0] , str[1]
 
 arr = [x for x in range(1,int(m)+1)]
 
-# 불리언 배열을 이요해야함 인덱스를 활용해서
-
 value = math.sqrt(m)
 
 def search_decimal(m):
     decimal = []
-    for i in range(m):
-        if decimal[i] < value:
-            if value % decimal != 0:
+
+    if m < 2:
+        return
+    decimal.append(2)    
+    for i in range(3,m+1):
+        value=True  
+        for x in decimal:
+            if x * x > i:
+                break
+            if i % x == 0:
+                value = False
+                break
+        if value:
+            decimal.append(i)
+    return decimal
+
+decimal = search_decimal(m)
+result = [x for x in decimal if x >= n]
+for x in result:
+    print(x)
+

@@ -21,3 +21,4 @@ while len(arr) > 0:
         k = k + k
 
 print(new_arr)
+
