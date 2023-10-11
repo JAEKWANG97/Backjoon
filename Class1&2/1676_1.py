@@ -1,5 +1,5 @@
 # N!에서 뒤에서부터 처음 0이 아닌 숫자가 나올 때까지 0의 개수를 구하는 프로그램을 작성하시오.
-
+# 10으로 나눠지는 
 def factorial(n : int)->int:
     dp = [0] * (n+1)
     if n <= 0:
@@ -21,5 +21,5 @@ while True:
         fact_n //= 10
     else:
         break
-
+print(len(str(fact_n)))
 print(count)

@@ -1,7 +1,7 @@
-# 힙 정렬?
-
 # 기수 정렬
-
+'''
+메모리 초과 뜸!!! 다른 정렬해야함 
+'''
 # 기수란 숫자의 자릿수다. 예를 들면 42는 4와 2의 두개의 자릿수를 가지고 이것이 기수가 된다.
 # 기수 정렬이란 이러한 자릿수의 값에 따라서 정렬하기 때문에 기수 정렬이라는 이름을 얻었다. 
 
@@ -40,9 +40,11 @@ for i in range(max_len-1  , -1 , -1): # 최대 자릿수 만큼 버킷을 업데
         x = str(num).zfill(max_len) # 해당값에 최대자릿수만큼 0을 만듬
         buckets[int(x[i])].append(num) # 다음 버켓의 인덱스 배열에 해당 자릿수 확인하여넘김
     arr = []
+    
+    # 버킷의 순서대로 arr 업데이트
+    arr = []
     for bucket in buckets:
-        for x in bucket:
-            arr.append(x)
+        arr.extend(bucket) # 버킷의 각 요소를 arr에 추가
         
 
 for num in arr:
