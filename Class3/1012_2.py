@@ -18,25 +18,51 @@
 
 import sys
 
+    
+def dfs(x, y, visited, arr):
+    # 주어진 배추밭의 크기를 벗어나는 경우 종료
+    if x < 0 or x >= len(arr[0]) or y < 0 or y >= len(arr):
+        return False
+    # 해당 위치에 배추가 없거나 이미 방문한 경우 종료
+    if not arr[y][x] or visited[y][x]:
+        return False
+    # 현재 위치를 방문 처리
+    visited[y][x] = True
+    # 상, 하, 좌, 우 위치에 대해 DFS 수행
+    dfs(x-1, y, visited, arr)
+    dfs(x+1, y, visited, arr)
+    dfs(x, y-1, visited, arr)
+    dfs(x, y+1, visited, arr)
+    return True
+
+def count_cabbage_groups(m, n, k, cabbages):
+    arr = [[False for _ in range(m)] for _ in range(n)]
+    visited = [[False for _ in range(m)] for _ in range(n)]
+    for x, y in cabbages:
+        arr[y][x] = True
+    count = 0
+    for x, y in cabbages:
+        if dfs(x, y, visited, arr):
+            count += 1
+    return count
+
 T = int(input())
+
+
 
 for _ in range(T):
     m,n,k = map(int , sys.stdin.readline().strip().split(' '))
     count = 0
-    arr = [[0 for j in range(m+1)] for i in range(n+1)]
+    arr = [[False for j in range(m)] for i in range(n)]
+    xy = []
     for i in range(0,k):
         x,y = map(int, sys.stdin.readline().strip().split(' '))
-        directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-        arr[y][x] = 1
-        value = True
-        for dx, dy in directions:
-            ny, nx = y + dy, x + dx 
-            try:
-                if arr[ny][nx] == 1:
-                    value = False
-                    break
-            except IndexError:
-                pass
-        if value: count += 1
+        arr[y][x] = True
+        xy.append((x,y))
+    print(count_cabbage_groups(m, n, k, xy))
 
-    print(count)
+
+
+
+        
+    
