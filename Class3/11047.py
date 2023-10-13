@@ -18,3 +18,16 @@ import sys
 n,k = map(int,sys.stdin.readline().strip().split(' '))
 
 print(n,k)
+
+# n 읜 돈 단위
+# k는 맞춰야될 돈
+coins = []
+for _ in range(n):
+    coin = int(sys.stdin.readline().strip())
+    coins.append(coin)
+
+money = 0
+i = len(coins) - 1
+while money < k:
+    if money - coins[i] > 0:
+        

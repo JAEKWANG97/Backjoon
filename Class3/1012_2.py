@@ -48,8 +48,6 @@ def count_cabbage_groups(m, n, k, cabbages):
 
 T = int(input())
 
-
-
 for _ in range(T):
     m,n,k = map(int , sys.stdin.readline().strip().split(' '))
     count = 0
