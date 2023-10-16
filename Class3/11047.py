@@ -17,17 +17,28 @@ import sys
 
 n,k = map(int,sys.stdin.readline().strip().split(' '))
 
-print(n,k)
 
 # n 읜 돈 단위
 # k는 맞춰야될 돈
-coins = []
-for _ in range(n):
-    coin = int(sys.stdin.readline().strip())
-    coins.append(coin)
+# 큰 돈부터 빼가면서 남은 돈과 빼야할 돈을 체크
+# 체크한 뒤 money - coin이 0보다 작으면 i를 감소 후 비교
+# 크면 money -= coin , count ++
 
-money = 0
+# 근데 시간 초과가 있음 나눗셈 ㄱㄱ
+coins = []
+
+for _ in range(n):
+    coins.append(int(sys.stdin.readline().strip()))
+
+money = k
 i = len(coins) - 1
-while money < k:
-    if money - coins[i] > 0:
-        
+count = 0
+while money >= 0 or i >= 0:
+    if money // coins[i] > 0:
+        temp = money // coins[i]
+        money = money % coins[i]
+        count += temp
+    if money == 0:
+        break
+    i -= 1 
+print(count)
