@@ -12,7 +12,7 @@ sunglasses face
 makeup face
 """
 
-import sys
+import sys  
 
 t = int(sys.stdin.readline().strip())
 for _ in range(t):

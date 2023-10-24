@@ -14,4 +14,4 @@ def dp_table(n):
         
     return dp[n]
 
-print(dp_table(n))
+print(dp_table(n) % 10007)

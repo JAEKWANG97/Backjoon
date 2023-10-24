@@ -25,8 +25,8 @@ def dp_table(arr,n):
         for i in range(n - length ):
             j = i + length - 1
             dp[i][j] = dp[i][j-1] + arr[j]
-    
     return(dp)
+
 dp = dp_table(arr,n)
 for _ in range (m):
     i , j  = map(int, sys.stdin.readline().strip().split(' '))

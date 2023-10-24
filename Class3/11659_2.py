@@ -16,11 +16,9 @@ for x in arr:
     else:
         Prefix_arr.append(x)
 # 누적합 A~B 까지 누적합을 구한다음
-# i,j의 누적합은 누적합 j - 누적합 i - 1
+# i,j의 누적합은 누적합 [j] -  누적합 [i - 1]
 
-print(Prefix_arr)
-
-
+# 하.......
 for _ in range (m):
     i , j  = map(int, sys.stdin.readline().strip().split(' '))
     if i > 1:
