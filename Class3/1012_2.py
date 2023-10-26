@@ -35,16 +35,6 @@ def dfs(x, y, visited, arr):
     dfs(x, y+1, visited, arr)
     return True
 
-def count_cabbage_groups(m, n, k, cabbages):
-    arr = [[False for _ in range(m)] for _ in range(n)]
-    visited = [[False for _ in range(m)] for _ in range(n)]
-    for x, y in cabbages:
-        arr[y][x] = True
-    count = 0
-    for x, y in cabbages:
-        if dfs(x, y, visited, arr):
-            count += 1
-    return count
 
 T = int(input())
 
