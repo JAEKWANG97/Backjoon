@@ -19,7 +19,6 @@ def dfs(arr , visit , m , n):
                     visit[y][x] = True
                     for dx, dy in directions:
                         ny, nx = y + dy, x + dx 
-                        
                         if arr[ny][nx] == 1 and visit[ny][nx] == False and ny < n and nx < m:
                             stack.append([ny,nx])
                             visit[ny][nx] = True

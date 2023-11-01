@@ -9,7 +9,6 @@ for i in range(t):
 meeting_list.sort(key=lambda x : (x[1],x[0]))
 count = 1
 i = 1
-
 j = 0
 while i < t and j < t:
     end_time = meeting_list[j][1]
@@ -18,6 +17,5 @@ while i < t and j < t:
         count += 1
         j = i
     i += 1
-        
-        
+
 print(count)
