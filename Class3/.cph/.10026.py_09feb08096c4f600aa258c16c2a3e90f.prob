@@ -1,0 +1,1 @@
+{"name":"Local: 10026","url":"c:\\Users\\JK\\Documents\\GitHub\\Backjoon\\Class3\\10026.py","tests":[{"id":1699097387496,"input":"5\nRRRBB\nGGBBB\nBBBRR\nBBRRR\nRRRRR","output":"4 3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\JK\\Documents\\GitHub\\Backjoon\\Class3\\10026.py","group":"local","local":true}
