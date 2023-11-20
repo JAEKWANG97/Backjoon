@@ -28,6 +28,7 @@ for i in range(n):
     for j in range(n):
         if not visit[i][j] and graph[i][j] == "1":
             visit , count_list = bfs(graph,visit,i,j,count_list)
+count_list.sort()
 print(len(count_list))            
 for i in range(len(count_list)):
     print(count_list[i])

@@ -11,12 +11,11 @@ def cal_s(n):
     return 9999 if n == 0 else n - 1
 
 def cal_l(n):
-    
     return (n%1000) * 10 + (n // 1000)
 
 def cal_r(n):
 
-    return (n%10) * 1000 + n % 1000
+    return (n%10) * 1000 + n // 10
 
 def bfs(start, target):
     visit = [False for _ in range(10000)]

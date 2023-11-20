@@ -18,5 +18,4 @@ for _ in range(t):
             answer = x
             break
         x += m 
-
     print(answer)

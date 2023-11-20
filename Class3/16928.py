@@ -32,7 +32,7 @@ def bfs(ladders, snakes):
             cur = snakes[cur]                
             
         if cur == 100:
-            print(count)
+            return print(count)
         
         for step in range(1,7):
             next = cur+step
