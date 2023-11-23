@@ -1,10 +1,10 @@
-from itertools import permutations
+from itertools import combinations_with_replacement
 
 n, m = map(int, input().split())
 
 arr = list(map(int, input().split()))
 arr.sort()
-permutation = list(permutations(arr, m))
+permutation = list(combinations_with_replacement((arr), m))
 
-for x in permutation:
+for x in sorted(set(permutation)):
     print(*x)
