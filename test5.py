@@ -13,5 +13,3 @@ for cards in select_card:
         select_cards.remove(cards[0])
         select_cards.remove(cards[1])
         round += 1
-
-for cards
